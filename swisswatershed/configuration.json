@@ -1,0 +1,8 @@
+{
+    "data":{
+        "root": "data/geo",
+        "root_cities": "data/geo/PLZO_GDB_LV95/PLZO_GDB_LV95.gdb"
+    },
+    "plotting": {},
+    "output": "watershed_v3.svg"
+}
