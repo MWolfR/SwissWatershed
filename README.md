@@ -18,10 +18,35 @@ I might solve this in future releases.
 
 ## Generating the plot
 ### Data sources
-Data sources. To run this, you will need some data that is freely available from the pages Swiss Federation. (TODO: Add links here)
+Data sources. To run this, you will need some data that is freely available from the pages Swiss Federation.
+Download the following:
+
+https://data.geo.admin.ch/ch.bafu.wasser-teileinzugsgebiete_2/
+
+To be able to indicate the locations of major cities, also download the following:
+
+https://data.geo.admin.ch/ch.swisstopo-vd.ortschaftenverzeichnis_plz/PLZO_GDB_LV95.zip
+
+### Preparation
+Unzip both data sources to anywhere. In the following instruction I will assume the location to be /home/user/data. Adjust accordingly.
+
+Next, open [swisswatershed/configuration.json](swisswatershed/configuration.json).
+Under "data/root" indicate the location the first file was unzipped to (e.g., /home/user/data)
+Under "data/root_cities" indicate the location the second file was unzipped to, followed by "PLZO_GDB_LV95/PLZO_GDB_LV95.gdb" (e.g. /home/user/data/PLZO_GDB_LV95/PLZO_GDB_LV95.gdb).
 
 ### Requirements
-(TODO: document)
+  - python 3.10 or higher recommended.
+The following packages are required:
+  - matplotlib
+  - json
+  - pandas
+  - numpy
+  - geopandas
+  - shapely
 
 ### Running it
-(TODO: document)
+
+Simply run [plot_watershed.py](swisswatershed/plot_watershed.py) and point it at the configuration file updated above.
+> python plot_watershed.py configuration.json
+
+A more interactive version can be found in the jupyter notebook [Plot map](notebooks/Plot%20map.ipynb)
